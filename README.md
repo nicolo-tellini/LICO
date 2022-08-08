@@ -34,7 +34,7 @@ the steps to follow will be printed on the shell.
 ## Configure CRON
 *cron* needs to know how frequently you want to run ```monitor.sh```.
 
-Change the configuration file of *cron* running ```crontab -e``` and add, for example:
+Change the configuration file running ```crontab -e``` and add, for example:
 
 ```
 0 0 1 */1 *  bash /favorite/dir/monitor.sh
