@@ -39,9 +39,11 @@ Change the configuration file of *cron* running ```crontab -e``` and add, for ex
 0 0 1 */1 *  bash /favorite/dir/monitor.sh
 ```
 
-The meaning of ```0 0 1 */1 *``` can be found by copy-pate the code in the searchbar at [CronTab.guru](https://crontab.guru/).<br>
+ ```0 0 1 */1 *``` specifies how frequently ou want to monitor the links status. <br>
+ <br>
+The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your favorite schedule up.<br>
 <br>
-Using this setup,```monitor.sh``` will run silently in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
+Using this setup,```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
 <br>
 At the end of the run, the bot sends the report to your Telegram account.
 
