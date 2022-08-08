@@ -2,7 +2,7 @@
 <img src="https://github.com/nicolo-tellini/LICO/blob/main/lico3.png">
 <p/>
 
-## Description
+# Description
 
 **LI**nk **CO**ntroller (alias **LICO**) is a configurable utility for monitoring the status of the links of the sotwares that make up a pipeline.
 
@@ -15,22 +15,23 @@ LICO relies on:
 
 While **cron** schedules the frequency at which yuo want to monitor your links status, **telegram-send** sends you a report of the status of your links.
 
-# WHAT YOU NEED
+# What you need
 
 1. COPY ```monitor.sh``` inside your ```/favorite/dir ```
 2. RENAME ```monitor.sh``` if you want.
+3. CRON and TELEGRAM-SEND
 
-## CRON and TELEGRAM-SEND
+## CRON and TELEGRAM-SEND installation
 Install both *cron* and *telegram-send* following the installation instructions from the links above,
 
-## CREATE A BOT ON TELEGRAM
+## Create a BOT on Telegram
 From the command line run 
   ```
 telegram-send --configure
   ```
 the steps to follow will be printed on the shell.
 
-## CONFIGURE CRON
+## Configure CRON
 *cron* needs to know how frequently you want to run ```monitor.sh```.
 
 Change the configuration file of *cron* running ```crontab -e``` and add, for example:
@@ -47,7 +48,7 @@ Using this setup,```monitor.sh``` will silently run in the background on the 1<s
 <br>
 At the end of the run, the bot sends the report to your Telegram account.
 
-## CONFIGURE ```monitor.sh```
+## Configure ```monitor.sh```
 
 Let's see how monitor a GitHub package.
 
@@ -102,7 +103,7 @@ At the end, you can customize the report either adding or removing quoted ```"te
 ```
 path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 ```
-## THE OUTPUT
+## The OUTPUT
 
 <p align="center" >
 <img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_res.png" width="400" height="800">
