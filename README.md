@@ -46,7 +46,6 @@ The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your fa
 <br>
 Using this setup, ```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
 <br>
-At the end of the run, the bot sends the report to your Telegram account.
 
 ## Configure ```monitor.sh```
 
@@ -104,6 +103,8 @@ At the end, you can customize the report either adding or removing quoted ```"te
 path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 ```
 ## The OUTPUT
+
+At the end of the run, the bot sends the report to your Telegram account.
 
 <p align="center" >
 <img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_res.png" width="400" height="800">
