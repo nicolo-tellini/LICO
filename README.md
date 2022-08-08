@@ -119,6 +119,7 @@ path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_
 * [telegram-send](https://pypi.org/project/telegram-send/).
 
 # TO-DO list
-- improve input
-- automatic detection github
-- less typing more automatization 
+- list link as input
+- automatic detection github / not github
+- function controller
+- no configuration of monitor
