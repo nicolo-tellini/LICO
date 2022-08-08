@@ -14,9 +14,11 @@ cd $pipeline
 # Date
 time=$(date)
 
-controller ("$1") {
-  control=$(grep Exit "$1" | cut -d":" -f2 | tr -d "[:blank:]")
-  if [ $control != 0 ]
+controller () {
+  exfile=$1
+  soft=$2
+  con=$(grep -w Exit $exfile | cut -d":" -f2 | tr -d "[:blank:]")
+  if [ $con != 0 ]
   then
     var_sms="$var_sms, $soft:Exit"
    else
@@ -37,7 +39,7 @@ then
 soft=$(echo $link | rev | cut -d"/" -f1 | rev)
 /usr/bin/time -v wget $link 2> $soft.err
 
-controller $soft.err
+controller $soft.err $soft
 
 else
 
@@ -45,7 +47,7 @@ else
 soft=$(echo $link | rev | cut -d"/" -f1 | rev | cut -d"." -f1)
 /usr/bin/time -v git clone --recursive $link 2> $soft.err
 
-controller $soft.err
+controller $soft.err $soft
 fi
 
 done < $file
