@@ -1,13 +1,30 @@
-# LICO
-
-**LICO: Link Conroller**
-
-An automated modular computational framework for a rapid glympse to the species composition of *Saccharomyces* yeasts from large datasets of paired-end illumina reads adtapt to deal different computational resourses.
+<p align="center" >
+<img src="https://github.com/nicolo-tellini/LICO/blob/main/lico3.png">
+<p/>
 
 ## Description
-  
-The species composition of *Saccharomyces* strains plays a major role in biological studies providing valuable insights in the evolutionary history of the *genus* while being exploited for improving indutrial phenotypes. Short-read sequencing are the most popular choice for large-scale genomics projects due to their rapid processesing and affordable prices. As a leading model organisms, the *Saccharomyces* yeasts, heve been massively sequenced with short reads Illumina platfroms. However, integrating several short-read sequencing data from different projects may generate workflow bottlenecks slowing down genomic analysises. Here we present **SppComp**, a modular computational pipeline that takes advantage of the chromosome-level end-to-end genome assemblies produced/reannotated with [LRSDAY](https://github.com/yjx1217/LRSDAY) and competitive short read mapping, as implemented and described in [MuLo-YDH](https://bitbucket.org/lt11/muloydh/src/master/), to assess the species composition of *Saccharomyces* yeasts from large datasets of paired-end illumina reads. **SppComp** is written in bash and R. By means the implementation of state-of-the-art softwares, [functional programming](http://adv-r.had.co.nz/Functional-programming.html), [vectorised code](https://adv-r.hadley.nz/perf-improve.html#vectorise) and effective silly-billy bash tricks, **SppComp** reduces computational slowdowns, allowing a full control of the processes along with the possibility to skip steps, where appropriate.
 
+**LI**nk **CO**ntroller (alias **LICO**) is a configurable utility for monitoring the status of the links of the sotwares that make up a pipeline.
+
+LICO consists of a bash script that perform the monitoring.
+
+LICO relies on:
+
+1) [cron](https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804): a job scheduler;
+2) [telegram-send](https://pypi.org/project/telegram-send/): a command-line tool to send messages over Telegram to your account.
+
+While **cron** schedules the frequency at which yuo want to monitor your links status, **telegram-send** sends you a report of the status of your links.
+
+## WHAT DO YOU NEED
+
+1. Install both *cron* and *telegram-send* following the installtion instruction in the links above,
+2. Configure the telegram bot :
+  from command line run 
+  ```
+  telegram-send --configure
+  
+```
+and follow the instructions that follow.
 
 ## Release history
 
@@ -15,9 +32,5 @@ The species composition of *Saccharomyces* strains plays a major role in biologi
 
 ## Dependencies
 
-* [samtools](https://github.com/samtools/samtools/releases) v1.14 
-* [bwa-mem2](https://github.com/bwa-mem2/bwa-mem2)
-
-### R libraries
-
-## Citations
+* [cron](https://github.com/samtools/samtools/releases);
+* [telegram-send](https://pypi.org/project/telegram-send/).
