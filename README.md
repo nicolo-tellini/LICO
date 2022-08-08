@@ -33,12 +33,14 @@ the steps to follow will be printed on the shell.
 ## CONFIGURE CRON
 *cron* needs to know how frequently you want to run ```monitor.sh```.
 
-Change the configuration cron file running ```crontab -e```.<br>
-For example:
+Change the configuration file of *cron* running ```crontab -e``` and add, for example:
+
 ```
 0 0 1 */1 *  bash /favorite/dir/monitor.sh
 ```
-With a copy-paste of the first part of the code ```0 0 1 */1 *``` in the searchbar at [CronTab.guru](https://crontab.guru/) you can see that we want to run ```monitor.sh``` the 1st of each month at midnight. 
+
+With a copy-paste of the first part of the code ```0 0 1 */1 *``` in the searchbar at [CronTab.guru](https://crontab.guru/).<br>
+Using this setup, ```monitor.sh``` will run silently in the background on the 1<sup>st</sup> of each month at midnight 🌕.
  
 
 ## Release history
