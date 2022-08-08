@@ -15,19 +15,18 @@ LICO relies on:
 
 While **cron** schedules the frequency at which yuo want to monitor your links status, **telegram-send** sends you a report of the status of your links.
 
-# WHAT DO YOU NEED
+# WHAT YOU NEED
 
 1. COPY ```monitor.sh``` inside your ```/favorite/dir ```
 2. RENAME ```monitor.sh``` if you want.
 
 ## CRON and TELEGRAM-SEND
-1. Install both *cron* and *telegram-send* following the installation instructions from the links above,
+Install both *cron* and *telegram-send* following the installation instructions from the links above,
 
 ## CREATE A BOT ON TELEGRAM
-1. Configure the telegram bot:<br>
-from command line run 
+From the command line run 
   ```
-  telegram-send --configure
+telegram-send --configure
   ```
 The steps to follow will be printed on the shell.<br>
 
