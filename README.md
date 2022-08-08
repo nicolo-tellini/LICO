@@ -102,6 +102,7 @@ At the end, you can customize the report either adding or removing quoted ```"te
 ```
 path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 ```
+## THE OUTPUT
 
 # RELEASE HISTORY
 
