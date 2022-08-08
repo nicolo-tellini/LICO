@@ -38,7 +38,7 @@ check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 
 time=$(date)
 
-# CHANGE THE PATH/TO/
+# CHANGE THE PATH/TO/telegram-send 
 paht/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 
 cd ..
