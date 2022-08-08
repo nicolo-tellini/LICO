@@ -95,7 +95,7 @@ check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 ```
 In this case we changed the name of the variable ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.<br>
 <br>
-NOTE: you can replace ```git clone --recursive https://github.com/$soft2/$soft2.git ``` with a more generic ```wget``` followed by the link to the package.<br>
+NOTE: you can replace ```git clone --recursive https://github.com/$soft2/$soft2.git``` with a more generic ```wget``` followed by the link to the package.<br>
 <br>
 At the end, you can customize the report either adding or removing quoted ```"text"``` after ```path/to/telegram-send```.
 
