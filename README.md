@@ -47,6 +47,58 @@ Using this setup,```monitor.sh``` will silently run in the background on the 1<s
 <br>
 At the end of the run, the bot sends the report to your Telegram account.
 
+## CONFIGURE ```monitor.sh```
+
+Let's see how cheange the script for monitoring a GitHub package.
+
+```
+#!/bin/bash
+
+rundir=/favorite/dir/ # this is the path where monitor.sh is stored
+pipeline=mypipeline # the name of your pipeline, it is used to send you an apporpriate report on Telegram
+
+
+soft1=bwa-mem2 # the name of the software we want to check the link status
+
+cd $rundir
+
+mkdir $pipeline
+
+cd $pipeline
+
+# link 1
+/usr/bin/time -v git clone --recursive https://github.com/$soft1/$soft1.git 2> $soft1.err
+
+check=$(grep Exit $soft1.err | cut -d":" -f2 | tr -d "[:blank:]")
+	if [ $check != 0 ]
+	then
+	var_sms1=$(echo "Exit")
+	else
+	var_sms1=$(echo "OK")	
+	fi
+```
+
+For monitoring other GitHub repository you can copy-paste the socond part of the script and change it according to the new software: 
+
+```
+soft2=samtools # the name of the software we want to check the link status
+
+# link 2
+/usr/bin/time -v git clone --recursive https://github.com/$soft2/$soft2.git 2> $soft2.err
+
+check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
+	if [ $check != 0 ]
+	then
+	var_sms2=$(echo "Exit")
+	else
+	var_sms2=$(echo "OK")	
+	fi
+```
+In this case we changed ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.
+
+
+
+
 ## Release history
 
 * v1.0.0 Released on 2023
