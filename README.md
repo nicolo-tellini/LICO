@@ -10,8 +10,8 @@ LICO consists of a bash script that perform the monitoring.
 
 LICO relies on:
 
-1) [cron](https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804): a job scheduler;
-2) [telegram-send](https://pypi.org/project/telegram-send/): a command-line tool to send messages over Telegram to your account.
+1) *cron*: a job scheduler;
+2) *telegram-send*: a command-line tool to send messages over Telegram to your account.
 
 While **cron** schedules the frequency at which you want to monitor your link status, **telegram-send** notifies you with a multi-message report.
 
@@ -22,7 +22,7 @@ While **cron** schedules the frequency at which you want to monitor your link st
 3. CRON and TELEGRAM-SEND
 
 ## CRON and TELEGRAM-SEND installation
-Install both *cron* and *telegram-send* following the installation instructions from the links above,
+Install both [*cron*]](https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804) and [*telegram-send*](https://pypi.org/project/telegram-send/) following the installation instructions,
 
 ## Create a BOT on Telegram
 From the command line run 
