@@ -49,14 +49,13 @@ At the end of the run, the bot sends the report to your Telegram account.
 
 ## CONFIGURE ```monitor.sh```
 
-Let's see how to change the script for monitoring a GitHub package.
+Let's see how monitor a GitHub package.
 
 ```
 #!/bin/bash
 
 rundir=/favorite/dir/ # this is the path where monitor.sh is stored
 pipeline=mypipeline # the name of your pipeline, it is used to send you an apporpriate report on Telegram
-
 
 soft1=bwa-mem2 # the name of the software we want to check the link status
 
@@ -78,7 +77,7 @@ check=$(grep Exit $soft1.err | cut -d":" -f2 | tr -d "[:blank:]")
 	fi
 ```
 
-For monitoring other GitHub repository you can *copy-paste* the socond part of the script and change it according to the new software: 
+For monitoring additional GitHub repositories you can *copy-paste* the socond part of the script and change the variables according to the new software: 
 
 ```
 soft2=samtools # the name of the software we want to check the link status
@@ -94,16 +93,15 @@ check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 	var_sms2=$(echo "OK")	
 	fi
 ```
-In this case we changed ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.<br>
+In this case we changed the name of the variable ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.<br>
 <br>
-NOTE: you can replace  ```git clone --recursive https://github.com/$soft2/$soft2.git ``` with a more generic ```wget``` followed by the link to the package.<br>
+NOTE: you can replace ```git clone --recursive https://github.com/$soft2/$soft2.git ``` with a more generic ```wget``` followed by the link to the package.<br>
 <br>
 At the end, you can customize the report either adding or removing quoted ```"text"``` after ```path/to/telegram-send```.
 
 ```
 path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 ```
-
 
 ## Release history
 
