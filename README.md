@@ -50,7 +50,7 @@ At the end of the run, the bot sends the report to your Telegram account.
 
 ## Configure ```monitor.sh```
 
-Let's see how monitor a GitHub package.
+Let's see how to monitor a GitHub package.
 
 ```
 #!/bin/bash
