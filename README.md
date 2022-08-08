@@ -28,12 +28,14 @@ From the command line run
   ```
 telegram-send --configure
   ```
-The steps to follow will be printed on the shell.<br>
+the steps to follow will be printed on the shell.
 
 ## CONFIGURE CRON
-*cron* needs to how how frequently you want to run monitoring.
-1. Change the configuration tab running ```crontab -e```
-2. 
+*cron* needs to know how frequently you want to run ```monitor.sh```.
+
+Change the configuration cron file running ```crontab -e```.
+Cron syntax can be found here [find out how to schedule the command](https://crontab.guru/)
+ 
 
 ## Release history
 
