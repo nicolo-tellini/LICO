@@ -105,7 +105,7 @@ path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_
 ## THE OUTPUT
 
 <p align="center" >
-<img src="https://github.com/nicolo-tellini/LICO/blob/main/WhatsApp%20Image%202022-08-08%20at%2015.55.01.jpeg">
+<img src="https://github.com/nicolo-tellini/LICO/blob/main/WhatsApp%20Image%202022-08-08%20at%2015.55.01.jpeg" width="400" height="800">
 <p/>
 
 # RELEASE HISTORY
