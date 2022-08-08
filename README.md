@@ -103,11 +103,11 @@ At the end, you can customize the report either adding or removing quoted ```"te
 path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 ```
 
-## Release history
+# RELEASE HISTORY
 
 * v1.0.0 Released on 2023
 
-## Dependencies
+# DEPENDENCIES
 
 * [cron](https://github.com/samtools/samtools/releases);
 * [telegram-send](https://pypi.org/project/telegram-send/).
