@@ -94,9 +94,13 @@ check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 	var_sms2=$(echo "OK")	
 	fi
 ```
-In this case we changed ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.
+In this case we changed ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.<br>
+<br>
+At the end, you can customize the report you will receive.
 
-
+```
+path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
+```
 
 
 ## Release history
