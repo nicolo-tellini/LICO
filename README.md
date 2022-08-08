@@ -39,9 +39,9 @@ Change the configuration file of *cron* running ```crontab -e``` and add, for ex
 0 0 1 */1 *  bash /favorite/dir/monitor.sh
 ```
 
-With a copy-paste of the first part of the code ```0 0 1 */1 *``` in the searchbar at [CronTab.guru](https://crontab.guru/).<br>
-Using this setup, ```monitor.sh``` will run silently in the background on the 1<sup>st</sup> of each month at midnight 🌕.
- 
+The meaning of ```0 0 1 */1 *``` can be found by copy-pate the code in the searchbar at [CronTab.guru](https://crontab.guru/).<br>
+Using this setup,```monitor.sh``` will run silently in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
+At the end of the run, the telegram bot sends the report to you.
 
 ## Release history
 
