@@ -44,7 +44,7 @@ Change the configuration file of *cron* running ```crontab -e``` and add, for ex
  <br>
 The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your favorite schedule up.<br>
 <br>
-Using this setup,```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
+Using this setup, ```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
 <br>
 At the end of the run, the bot sends the report to your Telegram account.
 
