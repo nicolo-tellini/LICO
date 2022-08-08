@@ -40,8 +40,10 @@ Change the configuration file of *cron* running ```crontab -e``` and add, for ex
 ```
 
 The meaning of ```0 0 1 */1 *``` can be found by copy-pate the code in the searchbar at [CronTab.guru](https://crontab.guru/).<br>
+<br>
 Using this setup,```monitor.sh``` will run silently in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
-At the end of the run, the telegram bot sends the report to you.
+<br>
+At the end of the run, the bot sends the report to your Telegram account.
 
 ## Release history
 
