@@ -6,6 +6,8 @@ pipeline=mypipeline # the name of your pipeline. It is used to send you an appor
 soft1=bwa-mem2 # the name of the software we want to check the link status.
 soft2=samtools  # the name of the software we want to check the link status.
 
+# CHANGE THE PATH/TO/telegram-send at line 42
+
 cd $rundir
 
 mkdir $pipeline
