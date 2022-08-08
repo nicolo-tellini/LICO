@@ -43,4 +43,4 @@ paht/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_
 
 cd ..
 
-rm -fr $rundir/$pipeline $rundir/nohup.out
+# rm -fr $rundir/$pipeline $rundir/nohup.out
