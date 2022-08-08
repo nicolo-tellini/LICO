@@ -1,11 +1,10 @@
 #!/bin/bash
 
-rundir=
-pipeline=sppcomp
+rundir=/favorite/dir/ # this is the path where monitor.sh is stored
+pipeline=mypipeline # the name of your pipeline. It is used to send you an apporpriate report on Telegram
 
-
-soft1=bwa-mem2
-soft2=samtools
+soft1=bwa-mem2 # the name of the software we want to check the link status.
+soft2=samtools  # the name of the software we want to check the link status.
 
 cd $rundir
 
@@ -25,7 +24,7 @@ check=$(grep Exit $soft1.err | cut -d":" -f2 | tr -d "[:blank:]")
 	fi
 
 # link 2
-/usr/bin/time -v git clone --recursive https://github.com/$soft2/$soft2.git --branch 1.14 2> $soft2.err
+/usr/bin/time -v git clone --recursive https://github.com/$soft2/$soft2.git 2> $soft2.err
 
 check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 	if [ $check !=  0 ]
@@ -37,7 +36,8 @@ check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
 
 time=$(date)
 
-/home/ntellini/tools/conda_pacbio_env/bin/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
+# CHANGE THE PATH/TO/
+paht/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
 
 cd ..
 
