@@ -39,7 +39,7 @@ Change the configuration file of *cron* running ```crontab -e``` and add, for ex
 0 0 1 */1 *  bash /favorite/dir/monitor.sh
 ```
 
- ```0 0 1 */1 *``` specifies how frequently ou want to monitor the links status. <br>
+ ```0 0 1 */1 *``` specifies how frequently you want to monitor the links status. <br>
  <br>
 The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your favorite schedule up.<br>
 <br>
