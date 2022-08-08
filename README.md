@@ -104,6 +104,10 @@ path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_
 ```
 ## THE OUTPUT
 
+<p align="center" >
+<img src="https://github.com/nicolo-tellini/LICO/blob/main/WhatsApp%20Image%202022-08-08%20at%2015.55.01.jpeg">
+<p/>
+
 # RELEASE HISTORY
 
 * v1.0.0 Released on 2023
