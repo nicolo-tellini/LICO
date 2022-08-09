@@ -5,6 +5,7 @@ rundir=$2
 pipeline=$3
 
 # enter rundir
+
 cd $rundir
 
 # make pipeline dir
@@ -21,21 +22,22 @@ controller () {
  con=$(grep -w Exit $exfile | cut -d":" -f2 | tr -d "[:blank:]")
   if [ $con != 0 ]
   then
-  var_sms="${var_sms} ${soft}: Exit;"
+  var_sms="${var_sms}${soft}:Exit;___"
+
   else
-  var_sms="${var_sms} ${soft}: Ok;"
+  var_sms="${var_sms}${soft}:Ok;___"
   fi
   }
 
 var_sms=""
 while read -r link;
 do
- githubrepo=$(echo $link | grep "github.com")
+ githubrepo=$(echo $link | grep "github.com" | grep ".git$")
   if [ -z "$githubrepo" ]
   then
   # HTTP link
   soft=$(echo $link | rev | cut -d"/" -f1 | rev)
-  /usr/bin/time -v wget --tries=3 --timeout=10 $link 2> $soft.err
+  /usr/bin/time -v wget $link 2> $soft.err
   controller $soft.err $soft
   else
   # GitHub link
@@ -45,7 +47,7 @@ do
   fi
 done < $rundir/$pipeline/$file
 
-var_sms=$(echo "${var_sms/%; /.}")
+var_sms=$(echo "${var_sms/%;___/.}")
 
 telcom=$(whereis telegram-send | cut -d":" -f2 | tr -d [:blank:])
 
