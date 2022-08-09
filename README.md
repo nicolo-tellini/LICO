@@ -70,7 +70,7 @@ PATH=/all/the/paths/in/your/$PATH
 
 ## Example
 
-After,the installation of the dependencies.
+After the installation of the dependencies,
 
 I locate  ```soft.txt ``` and  ```monitor.sh ``` in  ```/home/ntellini/LICO ```.
 
