@@ -23,11 +23,15 @@ note1: add +x permission to ```monitor.sh ```
 
 ## ```monitor.sh``` syntax:<br>
 
-Please, *respect the order* of the args: <br>
+```
+monitor.sh -h
+Usage:
+monitor.sh -l <file.txt> -p <rundir> -n <pipeline>
+```
+
+```<file.txt>```: a txt file with the GitHub/HTTP links (one link per line);<br>
 <br>
-```<txt>```: a txt file with the GitHub/HTTP links (one link per line);<br>
-<br>
-```<rundir>```: path to ```/favorite/dir``` where ```monitor.sh``` is stored;<br>
+```<rundir>```: path to ```/favorite/dir``` where ```file.txt``` is stored;<br>
 <br>
 ```<pipeline>```: the name of your pipeline (to send you a meaningful report).<br>
 <br>
