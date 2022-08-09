@@ -42,7 +42,7 @@ telegram-send --configure
   ```
 the steps to follow will be printed on the shell.
 
-Be nice, say "Hi" to your BOT, it is going to help you.
+Be nice, say " Hi! " to your BOT, it is going to help you.
 
 ## Configure CRON
 *cron* needs to know how frequently you want to run ```monitor.sh```.
