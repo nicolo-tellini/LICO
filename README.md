@@ -98,7 +98,7 @@ note4: remind to remove the folder with <pipeline> name inside your ```/favorite
 At the end of the run, the bot sends the report to your Telegram account.
 
 <p align="center" >
-<img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_res.png" width="400" height="800">
+<img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_OK.png" width="400" height="800">
 <p/>
 
 # RELEASE HISTORY
