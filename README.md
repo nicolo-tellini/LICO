@@ -103,7 +103,7 @@ note4: At the end of the run, remind to remove the folder with ```<pipeline>``` 
 At the end of the run, the bot sends the report to your Telegram account.
 
 <p align="center" >
-<img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_OK.png" width="400" height="800">
+<img src="https://github.com/nicolo-tellini/LICO/blob/main/LICO_OK.png" width="375" height="800">
 <p/>
   
 The 4<sup>th</sup> message is the **MOST** important.<br>
