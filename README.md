@@ -13,7 +13,7 @@ LICO relies on:
 1) *cron*: a job scheduler;
 2) *telegram-send*: a command-line tool to send messages over Telegram to your account.
 
-While **cron** schedules the frequency at which you want to monitor your link status, **telegram-send** notifies you with a multi-message report.
+While **cron** schedules the frequency at which you want to monitor the integrity of your links, **telegram-send** notifies you with a multi-message report.
 
 # What you need
 
