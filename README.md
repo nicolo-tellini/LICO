@@ -66,6 +66,7 @@ SHELL=/bin/sh
 PATH=/all/the/paths/in/your/$PATH
 
 0 0 1 */1 * monitor.sh <listoflinks.txt> <rundir> <pipeline>
+
  ```
 
 ## Example
@@ -91,7 +92,9 @@ PATH=/opt/def/anaconda3/bin:/opt/tvs/bin:/home/tools/bin:/home/ntellini/.local/b
 */5 * * * * monitor.sh soft.txt /home/ntellini/LICO sppcomp
 
 ```
-note4: remind to remove the folder with <pipeline> name inside your ```/favorite/dir``` (in my case/home/ntellini/LICO/sppcomp) before the next run starts. 
+The run will start in 5 min afetr saving the *crontab* confing file. <br>
+<br>
+note4: At the end of the run, remind to remove the folder with ```<pipeline>``` name inside your ```/favorite/dir``` (in my case/home/ntellini/LICO/sppcomp) before the next run starts. 
 
 ## The OUTPUT
 
