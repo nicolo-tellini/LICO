@@ -17,9 +17,20 @@ While **cron** schedules the frequency at which you want to monitor your link st
 
 # What you need
 
-1. COPY ```monitor.sh``` inside your ```/favorite/dir ```
-2. RENAME ```monitor.sh``` if you want.
-3. CRON and TELEGRAM-SEND
+1. COPY ```monitor.sh``` inside your ```/favorite/dir ```<br>
+note1: add +x permission to ```monitor.sh ```
+2. CRON and TELEGRAM-SEND
+
+## ```monitor.sh``` syntax:<br>
+
+Please, respect the order of the args: <br>
+<br>
+```<txt>``` a txt file with the GitHub/HTTP links (one link per line);<br>
+<br>
+```<rundir>``` /favorite/dir where ```monitor.sh``` is stored;<br>
+<br>
+```<pipeline>``` the name of your pipeline (to send you a meaningful report).<br>
+<br>
 
 ## CRON and TELEGRAM-SEND installation
 Install both [*cron*](https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804) and [*telegram-send*](https://pypi.org/project/telegram-send/) following the installation instructions,
@@ -37,71 +48,27 @@ the steps to follow will be printed on the shell.
 Change the configuration file running ```crontab -e``` and add, for example:
 
 ```
-0 0 1 */1 *  bash /favorite/dir/monitor.sh
+0 0 1 */1 * monitor.sh <txt> <rundir> <pipeline>
 ```
-
+note1: the script above assumes that ```/favorite/dir``` is in ```$PATH```.<br>
+<br>
  ```0 0 1 */1 *``` specifies how frequently you want to monitor the links status. <br>
- <br>
+<br>
 The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your favorite schedule up.<br>
 <br>
 Using this setup, ```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
 <br>
-
-## Configure ```monitor.sh```
-
-Let's see how to monitor a GitHub package.
-
-```
-#!/bin/bash
-
-rundir=/favorite/dir/ # this is the path where monitor.sh is stored
-pipeline=mypipeline # the name of your pipeline, it is used to send you an apporpriate report on Telegram
-
-soft1=bwa-mem2 # the name of the software we want to check the link status
-
-cd $rundir
-
-mkdir $pipeline
-
-cd $pipeline
-
-# link 1
-/usr/bin/time -v git clone --recursive https://github.com/$soft1/$soft1.git 2> $soft1.err
-
-check=$(grep Exit $soft1.err | cut -d":" -f2 | tr -d "[:blank:]")
-	if [ $check != 0 ]
-	then
-	var_sms1=$(echo "Exit")
-	else
-	var_sms1=$(echo "OK")	
-	fi
-```
-
-For monitoring additional GitHub repositories you can *copy-paste* the socond part of the script and change the variables according to the new software: 
-
-```
-soft2=samtools # the name of the software we want to check the link status
-
-# link 2
-/usr/bin/time -v git clone --recursive https://github.com/$soft2/$soft2.git 2> $soft2.err
-
-check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
-	if [ $check != 0 ]
-	then
-	var_sms2=$(echo "Exit")
-	else
-	var_sms2=$(echo "OK")	
-	fi
-```
-In this case we changed the name of the variable ```soft1``` with ```soft2``` and ```var_sms1``` with ```var_sms2```.<br>
+note2: do not forget to specify $SHELL and $PATH inside *crontab*<br>
 <br>
-NOTE: you can replace ```git clone --recursive https://github.com/$soft2/$soft2.git``` with a more generic ```wget``` followed by the link to the package.<br>
-<br>
-At the end, you can customize the report either adding or removing quoted ```"text"``` after ```path/to/telegram-send```.
 
-```
-path/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
-```
+ ```
+SHELL=/bin/sh
+PATH=/all/the/paths/in/your/$PATH
+
+0 0 1 */1 * monitor.sh <listoflinks.txt> <rundir> <pipeline>
+ ```
+
+ 
 ## The OUTPUT
 
 At the end of the run, the bot sends the report to your Telegram account.
