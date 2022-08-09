@@ -21,10 +21,9 @@ controller () {
  con=$(grep -w Exit $exfile | cut -d":" -f2 | tr -d "[:blank:]")
   if [ $con != 0 ]
   then
-  var_sms="${var_sms}${soft}:Exit; "
-
+  var_sms="${var_sms} ${soft}: Exit;"
   else
-  var_sms="${var_sms}${soft}:Ok; "
+  var_sms="${var_sms} ${soft}: Ok;"
   fi
   }
 
