@@ -23,13 +23,13 @@ note1: add +x permission to ```monitor.sh ```
 
 ## ```monitor.sh``` syntax:<br>
 
-Please, respect the order of the args: <br>
+Please, *respect the order* of the args: <br>
 <br>
-```<txt>``` a txt file with the GitHub/HTTP links (one link per line);<br>
+```<txt>```: a txt file with the GitHub/HTTP links (one link per line);<br>
 <br>
-```<rundir>``` /favorite/dir where ```monitor.sh``` is stored;<br>
+```<rundir>```: path to ```/favorite/dir``` where ```monitor.sh``` is stored;<br>
 <br>
-```<pipeline>``` the name of your pipeline (to send you a meaningful report).<br>
+```<pipeline>```: the name of your pipeline (to send you a meaningful report).<br>
 <br>
 
 ## CRON and TELEGRAM-SEND installation
@@ -50,15 +50,15 @@ Change the configuration file running ```crontab -e``` and add, for example:
 ```
 0 0 1 */1 * monitor.sh <txt> <rundir> <pipeline>
 ```
-note1: the script above assumes that ```/favorite/dir``` is in ```$PATH```.<br>
+note2: the script above assumes that ```/favorite/dir``` is in ```$PATH```.<br>
 <br>
- ```0 0 1 */1 *``` specifies how frequently you want to monitor the links status. <br>
+ ```0 0 1 */1 *``` specifies how frequently you want to monitor the link integrity. <br>
 <br>
 The searchbar at [CronTab.guru](https://crontab.guru/) allows you to set your favorite schedule up.<br>
 <br>
 Using this setup, ```monitor.sh``` will silently run in the background on the 1<sup>st</sup> of each month at midnight 🌕.<br>
 <br>
-note2: do not forget to specify $SHELL and $PATH inside *crontab*<br>
+note3: do not forget to specify ```SHELL``` and ```PATH``` inside *crontab* and make sure the file ends with a newline.<br>
 <br>
 
  ```
@@ -68,7 +68,30 @@ PATH=/all/the/paths/in/your/$PATH
 0 0 1 */1 * monitor.sh <listoflinks.txt> <rundir> <pipeline>
  ```
 
- 
+## Example
+
+After,the installation of the dependencies.
+
+I locate  ```soft.txt ``` and  ```monitor.sh ``` in  ```/home/ntellini/LICO ```.
+
+ ```soft.txt``` contains :
+  ```
+https://github.com/rrwick/Filtlong.git
+https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.6-6/GenomeAnalysisTK.jar
+http://topaz.genetics.utah.edu/maker_downloads/static/maker-3.00.0-beta.tgz
+http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE.tar.gz
+
+  ```
+i.e. a GitHub repo, two broken links, and a working link.
+
+My crontab looks like this:
+ ```
+SHELL=/bin/sh
+PATH=/opt/def/anaconda3/bin:/opt/tvs/bin:/home/tools/bin:/home/ntellini/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/lib/mit/sbin:/snap/bin:/home/ntellini/LICO
+*/5 * * * * monitor.sh soft.txt /home/ntellini/LICO sppcomp
+```
+note4: remind to remove the folder with <pipeline> name inside your ```/favorite/dir``` (in my case/home/ntellini/LICO/sppcomp) before the next run starts. 
+
 ## The OUTPUT
 
 At the end of the run, the bot sends the report to your Telegram account.
