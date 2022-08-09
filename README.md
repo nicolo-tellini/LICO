@@ -42,6 +42,8 @@ telegram-send --configure
   ```
 the steps to follow will be printed on the shell.
 
+Be nice, say "Hi" to your BOT, it is going to help you.
+
 ## Configure CRON
 *cron* needs to know how frequently you want to run ```monitor.sh```.
 
@@ -68,7 +70,7 @@ PATH=/all/the/paths/in/your/$PATH
 0 0 1 */1 * monitor.sh <listoflinks.txt> <rundir> <pipeline>
 
  ```
-
+ 
 ## Example
 
 After the installation of the dependencies,
