@@ -4,7 +4,7 @@
 
 # Description
 
-**LI**nk **CO**ntroller (alias **LICO**) is a configurable utility for monitoring the status of the links.
+**LI**nk **CO**ntroller (alias **LICO**) is a configurable utility for monitoring the link integrity.
 
 LICO consists of a bash script that identifies broken links.
 
