@@ -118,9 +118,3 @@ the packages ```Filtlong``` and  ```tRNAscan-SE.tar.gz``` have been successfully
 
 * [cron](https://github.com/samtools/samtools/releases);
 * [telegram-send](https://pypi.org/project/telegram-send/).
-
-# TO-DO list
-- list link as input
-- automatic detection github / not github
-- function controller
-- no configuration of monitor
