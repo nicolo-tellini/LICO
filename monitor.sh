@@ -3,7 +3,7 @@
 while getopts "l:p:n:h" arg; do
   case $arg in
     h) echo "Usage:"
-       echo "monitor.sh -l txt -p /path/to/monitor.sh -n pipeline name"
+       echo "monitor.sh -l file.txt -p /path/to/dir/where/file.txt/is/stored -n pipeline name"
        exit 0
        ;;
     n) pipeline=$OPTARG;;
