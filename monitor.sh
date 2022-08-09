@@ -1,49 +1,53 @@
 #!/bin/bash
 
-rundir=/favorite/dir/ # this is the path where monitor.sh is stored
-pipeline=mypipeline # the name of your pipeline. It is used to send you an apporpriate report on Telegram
+file=$1
+rundir=$2
+pipeline=$3
 
-soft1=bwa-mem2 # the name of the software we want to check the link status.
-soft2=samtools  # the name of the software we want to check the link status.
-
-user1=
-user2=
-
-# CHANGE THE PATH/TO/telegram-send at line 42
-
+# enter rundir
 cd $rundir
 
-mkdir $pipeline
-
+# make pipeline dir
+mkdir -p $pipeline
+cp -r $file $pipeline
 cd $pipeline
 
-# link 1
-/usr/bin/time -v git clone --recursive https://github.com/$user1/$soft1.git 2> $soft1.err
-
-check=$(grep Exit $soft1.err | cut -d":" -f2 | tr -d "[:blank:]")
-	if [ $check != 0 ]
-	then
-	var_sms1=$(echo "Exit")
-	else
-	var_sms1=$(echo "OK")	
-	fi
-
-# link 2
-/usr/bin/time -v git clone --recursive https://github.com/$user2/$soft2.git 2> $soft2.err
-
-check=$(grep Exit $soft2.err | cut -d":" -f2 | tr -d "[:blank:]")
-	if [ $check !=  0 ]
-	then
-	var_sms2=$(echo "Exit")
-	else
-	var_sms2=$(echo "OK")	
-	fi
-
+# Date
 time=$(date)
 
-# CHANGE THE PATH/TO/telegram-send 
-paht/to/telegram-send "$time" "LICO report" "Pipeline $pipeline:" "$soft1: $var_sms1" "$soft2: $var_sms2"
+controller () {
+ exfile=$1
+ soft=$2
+ con=$(grep -w Exit $exfile | cut -d":" -f2 | tr -d "[:blank:]")
+  if [ $con != 0 ]
+  then
+  var_sms="${var_sms}${soft}:Exit; "
 
-cd ..
+  else
+  var_sms="${var_sms}${soft}:Ok; "
+  fi
+  }
 
-# rm -fr $rundir/$pipeline $rundir/nohup.out
+var_sms=""
+while read -r link;
+do
+ githubrepo=$(echo $link | grep "github.com")
+  if [ -z "$githubrepo" ]
+  then
+  # HTTP link
+  soft=$(echo $link | rev | cut -d"/" -f1 | rev)
+  /usr/bin/time -v wget --tries=3 --timeout=10 $link 2> $soft.err
+  controller $soft.err $soft
+  else
+  # GitHub link
+  soft=$(echo $link | rev | cut -d"/" -f1 | rev | cut -d"." -f1)
+  /usr/bin/time -v git clone --recursive $link 2> $soft.err
+  controller $soft.err $soft
+  fi
+done < $rundir/$pipeline/$file
+
+var_sms=$(echo "${var_sms/%; /.}")
+
+telcom=$(whereis telegram-send | cut -d":" -f2 | tr -d [:blank:])
+
+$telcom "$time" "LICO report" "Pipeline: $pipeline" "${var_sms}" "The run is over. Thank you for using LICO." "Please, remind to delete the directory $rundir/$pipeline to avoid Exit 128 : directory exists at the next run."
