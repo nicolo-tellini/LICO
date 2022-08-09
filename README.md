@@ -75,20 +75,21 @@ After,the installation of the dependencies.
 I locate  ```soft.txt ``` and  ```monitor.sh ``` in  ```/home/ntellini/LICO ```.
 
  ```soft.txt``` contains :
-  ```
+```
 https://github.com/rrwick/Filtlong.git
 https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.6-6/GenomeAnalysisTK.jar
 http://topaz.genetics.utah.edu/maker_downloads/static/maker-3.00.0-beta.tgz
 http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE.tar.gz
-
-  ```
+```
 i.e. a GitHub repo, two broken links, and a working link.
 
 My crontab looks like this:
- ```
+
+```
 SHELL=/bin/sh
 PATH=/opt/def/anaconda3/bin:/opt/tvs/bin:/home/tools/bin:/home/ntellini/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/lib/mit/sbin:/snap/bin:/home/ntellini/LICO
 */5 * * * * monitor.sh soft.txt /home/ntellini/LICO sppcomp
+
 ```
 note4: remind to remove the folder with <pipeline> name inside your ```/favorite/dir``` (in my case/home/ntellini/LICO/sppcomp) before the next run starts. 
 
