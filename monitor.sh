@@ -1,11 +1,19 @@
 #!/bin/bash
 
-file=$1
-rundir=$2
-pipeline=$3
+while getopts "l:p:n:h" arg; do
+  case $arg in
+    h) echo "Usage:"
+       echo "monitor.sh -l txt -p /path/to/monitor.sh -n pipeline name"
+       exit 0
+       ;;
+    n) pipeline=$OPTARG;;
+    l) file=$OPTARG;;
+    p) rundir=$OPTARG;;
+  esac
+done
+echo "";
 
 # enter rundir
-
 cd $rundir
 
 # make pipeline dir
@@ -22,10 +30,10 @@ controller () {
  con=$(grep -w Exit $exfile | cut -d":" -f2 | tr -d "[:blank:]")
   if [ $con != 0 ]
   then
-  var_sms="${var_sms}${soft}:Exit;___"
+  var_sms="${var_sms}${soft}:EXIT; "
 
   else
-  var_sms="${var_sms}${soft}:Ok;___"
+  var_sms="${var_sms}${soft}:OK; "
   fi
   }
 
@@ -47,7 +55,7 @@ do
   fi
 done < $rundir/$pipeline/$file
 
-var_sms=$(echo "${var_sms/%;___/.}")
+var_sms=$(echo "${var_sms/%; /.}")
 
 telcom=$(whereis telegram-send | cut -d":" -f2 | tr -d [:blank:])
 
