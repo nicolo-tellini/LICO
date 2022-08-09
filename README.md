@@ -104,6 +104,7 @@ At the end of the run, the bot sends the report to your Telegram account.
 The 4<sup>th</sup> message is the **MOST** important.<br>
  <br>
 It tell us that, during the download of the packages: <br>
+<br>
 The packages ```Filtlong``` and  ```tRNAscan-SE.tar.gz``` have been successfully downloaded (```OK```) while, both ```GATK``` and ```maker``` downloads ended up with an error and the scripts ```Exit``` the command.
 
 # RELEASE HISTORY
