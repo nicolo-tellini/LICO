@@ -72,7 +72,7 @@ PATH=/all/the/paths/in/your/$PATH
 
 After the installation of the dependencies,
 
-I locate  ```soft.txt ``` and  ```monitor.sh ``` in  ```/home/ntellini/LICO ```.
+I locate  ```soft.txt``` and  ```monitor.sh``` in  ```/home/ntellini/LICO```.
 
  ```soft.txt``` contains :
 ```
