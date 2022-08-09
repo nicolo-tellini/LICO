@@ -120,6 +120,3 @@ the packages ```Filtlong``` and  ```tRNAscan-SE.tar.gz``` have been successfully
 
 * [cron](https://github.com/samtools/samtools/releases);
 * [telegram-send](https://pypi.org/project/telegram-send/).
-
-# TO-DO 
-- Add the options -l -p -n -h 
