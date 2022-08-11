@@ -19,7 +19,7 @@ The concept of installability is challenged by the ticking away of times because
 # Description
 
 Here we present **LI**nk **CO**ntroller (**LICO**).
-**LICO** is a schedulable utility for monitoring the link integrity that allows you to promptly identify broken links that crack the installation process of a pipeline.
+**LICO** is a schedulable utility for monitoring the link integrity and allows you to promptly identify broken links that crack the installation process of a pipeline.
 **LICO** does test the integrity of the links that point to a specific version of a tools integrated into your pipeline. 
 **LICO** operates silently in the background in a scheduled manner and returns a report to your Telegram account with info concerning the integrity of the links.
 **LICO** relies on:
