@@ -41,7 +41,6 @@ controller () {
   if [ $con != 0 ]
   then
   var_sms="${var_sms}${soft}:EXIT; "
-
   else
   var_sms="${var_sms}${soft}:OK; "
   fi
