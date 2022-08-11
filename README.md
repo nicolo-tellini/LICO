@@ -4,7 +4,7 @@
 
 # The Rational
 
-Pipelines are logically organised workflows made up of tools and custom scripts. Serving code in an appropriate and reusable way is important to mantain the reproducibility of a scientific product and to provide the community with a way to face a problem and deal with specific tasks. 
+Pipelines are logically organised workflows made up of tools and custom scripts. Serving code in an appropriate and reusable way is important to mantain the reproducibility of a scientific product and to provide the community with a way to face a problem task by task. 
 
 > *"Computational analysis tools and pipelines should make the effort to be easily installable."* 
 
