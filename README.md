@@ -2,11 +2,19 @@
 <img src="https://github.com/nicolo-tellini/LICO/blob/main/lico3.png">
 <p/>
 
+# The Rational
+
+Pipelines are logically organised workflows made up of tools and custom scripts. Serving code in an appropriate and reusable way to the community is important to mantain the reproducibility of a scientific product. "Computational analysis tools and pipelines should make the effort to be easily installable." Cit. [Altuna Akalin](https://towardsdatascience.com/scientific-data-analysis-pipelines-and-reproducibility-75ff9df5b4c5). The concept of installability is challenged by the ticking away of times because tools evolve and change constantly, that's it. *"Linux is an operating system and its core is just a kernel. [...]. It is the largest software project in the history of mankind. We contribute at the rate of about [...] ten patches a day, twenty four hours a day, seven days a week, go into this code. It's constantly updated, constantly revised, constantly changing because the world changes.
+We have to react to a change in world. If an operating system stops change and of course if the world doesn't stop changing it will die.Linux constantly is improved, constantly is updated in order to handle the changing world.
+"* Greg Khroah-Hartman fellow at The Linux Foundation.
+
 # Description
 
-**LI**nk **CO**ntroller (alias **LICO**) is a configurable utility for monitoring the link integrity.
+Here we present LInk COntroller (LICO). LICO does test the integrity of the links that point to a specific version of a tools integrated into your pipeline. LICO operates silently in the background in a scheduled manner and returns a report to your Telegram account with info concerning the integrity of the links.
 
-LICO consists of a bash script that identifies broken links.
+**LICO** is a schedulable utility for monitoring the link integrity that allows you to promptly identify broken links that crack the installation process of a pipeline..
+
+LICO consists of a bash script.
 
 LICO relies on:
 
