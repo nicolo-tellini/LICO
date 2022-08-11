@@ -122,5 +122,5 @@ the packages ```Filtlong``` and  ```tRNAscan-SE.tar.gz``` have been successfully
 
 # DEPENDENCIES
 
-* [cron](https://github.com/samtools/samtools/releases);
+* [cron](https://packages.ubuntu.com/search?keywords=cron);
 * [telegram-send](https://pypi.org/project/telegram-send/).
