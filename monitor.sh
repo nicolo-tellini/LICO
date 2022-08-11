@@ -2,7 +2,7 @@
 
 while getopts "l:p:n:h" arg; do
   case $arg in
-    h) echo " Hi! (^０^)ノ "
+    h) echo "(^０^)ノ Hi! "
        echo ""
        echo "monitor usage:"
        echo ""
