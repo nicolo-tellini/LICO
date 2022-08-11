@@ -2,7 +2,9 @@
 
 while getopts "l:p:n:h" arg; do
   case $arg in
-    h) echo "Usage:"
+    h) echo " Hi! (^０^)ノ "
+       echo ""
+       echo "monitor usage:"
        echo ""
        echo "monitor.sh -l <file.txt> -p <rundir> -n <pipeline>"
        echo ""
@@ -67,4 +69,4 @@ var_sms=$(echo "${var_sms/%; /.}")
 
 telcom=$(whereis telegram-send | cut -d":" -f2 | tr -d [:blank:])
 
-$telcom "$time" "LICO report" "Pipeline: $pipeline" "${var_sms}" "The run is over. Thank you for using LICO." "Please, remind to delete the directory $rundir/$pipeline to avoid Exit 128 : directory exists at the next run."
+$telcom "$time" "LICO report" "Pipeline: $pipeline" "${var_sms}" "The run is over." "Please, remind to delete the directory $rundir/$pipeline to avoid Exit 128 : directory exists at the next run." "Thank you for using LICO. ( ´ ω ` )ノﾞ	"
