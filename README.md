@@ -30,6 +30,8 @@ Here, we present **LI**nk **CO**ntroller (**LICO**).
 
 While **cron** schedules the frequency at which you want to monitor the integrity of your links, **telegram-send** notifies you with a multi-message report.
 
+NOTE: If you are not interested in sheduling/Telegram you can run ```monitorSR.sh```, instead. The output will be printed on the terminal.
+
 # What you need
 
 1. COPY ```monitor.sh``` inside your ```/favorite/dir ```<br>
