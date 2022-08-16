@@ -30,15 +30,9 @@ Here, we present **LI**nk **CO**ntroller (**LICO**).
 
 While **cron** schedules the frequency at which you want to monitor the integrity of your links, **telegram-send** notifies you with a multi-message report.
 
-NOTE: If you are not interested in sheduling/Telegram you can run ```monitorSR.sh```, instead. The output will be printed on the terminal.
+NOTE: If you are not interested in sheduling/Telegram you can run ```monitorSR.sh```, instead. The output will be printed on the terminal. If you run ```monitorSR.sh``` you do not need to proceed further in this README
 
-# What you need
-
-1. COPY ```monitor.sh``` inside your ```/favorite/dir ```<br>
-note1: add +x permission to ```monitor.sh ```
-2. CRON and TELEGRAM-SEND
-
-## ```monitor.sh``` syntax:<br>
+## ```monitor.sh``` and ```monitorSR.sh``` syntax:<br>
 
 ```
 monitor.sh -h
@@ -52,6 +46,12 @@ monitor.sh -l <file.txt> -p <rundir> -n <pipeline>
 <br>
 ```<pipeline>```: the name of your pipeline (to send you a meaningful report).<br>
 <br>
+
+# What you need
+
+1. COPY ```monitor.sh``` inside your ```/favorite/dir ```<br>
+note1: add +x permission to ```monitor.sh ```
+2. CRON and TELEGRAM-SEND
 
 ## CRON and TELEGRAM-SEND installation
 Install both [*cron*](https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804) and [*telegram-send*](https://pypi.org/project/telegram-send/) following the installation instructions,
