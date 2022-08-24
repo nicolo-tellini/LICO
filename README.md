@@ -1,6 +1,4 @@
-<p align="center" >
-<img src="https://github.com/nicolo-tellini/LICO/blob/main/lico3.png">
-<p/>
+![LICO](https://github.com/nicolo-tellini/LICO/blob/main/lico3.png)
 
 # The Rational
 
