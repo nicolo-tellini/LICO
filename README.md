@@ -1,5 +1,3 @@
-![LICO](https://github.com/nicolo-tellini/LICO/blob/main/lico3.png)
-
 # The Rational
 
 Pipelines are logically organised workflows made up of tools and custom scripts. Serving code in an appropriate and reusable way is important to mantain the reproducibility of a scientific product and to provide the community with a way to face a problem task by task. 
